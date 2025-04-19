@@ -30,9 +30,10 @@ const SignupPage = () => {
   const [workField, setWorkField] = useState('');
   const [education, setEducation] = useState([]);
   const [errorMsg, setErrorMsg] = useState('');
+  const [isFieldOpen, setIsFieldOpen] = useState(false);
   const navigate = useNavigate();
 
-  // Work field options
+  // Work field options exactly as specified
   const workFields = [
     'Tech', 
     'Education', 
@@ -113,17 +114,31 @@ const SignupPage = () => {
 
             <div className="form-group">
               <label htmlFor="workField">Work Field</label>
-              <select
-                id="workField"
-                value={workField}
-                onChange={(e) => setWorkField(e.target.value)}
-                className="auth-input"
-              >
-                <option value="" disabled>Select your field</option>
-                {workFields.map(field => (
-                  <option key={field} value={field}>{field}</option>
-                ))}
-              </select>
+              <div className="custom-select">
+                <div 
+                  className="select-selected"
+                  onClick={() => setIsFieldOpen(!isFieldOpen)}
+                >
+                  {workField || 'Select your field'}
+                  <span className="select-arrow">▼</span>
+                </div>
+                {isFieldOpen && (
+                  <div className="select-items">
+                    {workFields.map(field => (
+                      <div 
+                        key={field} 
+                        className={`select-item ${workField === field ? 'selected' : ''}`}
+                        onClick={() => {
+                          setWorkField(field);
+                          setIsFieldOpen(false);
+                        }}
+                      >
+                        {field}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
             
             <div className="form-group">

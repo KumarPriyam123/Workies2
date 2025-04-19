@@ -69,7 +69,7 @@ const LandingPage = () => {
           </div>
           
           <div className="auth-links">
-            <Link to="/dashboard" className="auth-link">Login / Sign up</Link>
+            <Link to="/login" className="auth-link">Login / Sign up</Link>
           </div>
         </div>
       </nav>
@@ -81,7 +81,7 @@ const LandingPage = () => {
             Achieve more, in efficient manner
           </h1>
           <div className="hero-cta">
-            <Link to="/dashboard" className="cta-button">Get Started</Link>
+            <Link to="/signup" className="cta-button">Get Started</Link>
           </div>
         </div>
       </section>
