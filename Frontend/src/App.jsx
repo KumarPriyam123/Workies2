@@ -36,7 +36,17 @@ const Navbar = ({ activeSection, setActiveSection }) => {
           >
             Dashboard
           </a>
-          <a href="#" className="nav-link">Projects</a>
+          <a 
+            href="/team-projects" 
+            className="nav-link"
+            onClick={(e) => {
+              // Use external link instead of scroll
+              e.preventDefault();
+              window.location.href = "/team-projects";
+            }}
+          >
+            Team Projects
+          </a>
           <a 
             href="#calendar" 
             className={`nav-link ${activeSection === 'calendar' ? 'active' : ''}`}
@@ -303,27 +313,11 @@ const TodoList = ({ tasks, setTasks }) => {
 
 // Task item component (for upcoming events)
 const TaskItem = ({ name, time, date, category }) => {
-  // Format the date to be more readable
+  // Format the date to always show month and day
   const formatDate = (dateString) => {
     const taskDate = new Date(dateString);
-    const today = new Date();
-    const tomorrow = new Date(today);
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    
-    const nextWeek = new Date(today);
-    nextWeek.setDate(nextWeek.getDate() + 7);
-    
-    if (taskDate.toDateString() === today.toDateString()) {
-      return 'Today';
-    } else if (taskDate.toDateString() === tomorrow.toDateString()) {
-      return 'Tomorrow';
-    } else if (taskDate < nextWeek) {
-      // Return the day of the week
-      return ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][taskDate.getDay()];
-    } else {
-      // Return formatted date
-      return taskDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-    }
+    // Return formatted date in Month Day format (e.g., "Apr 20")
+    return taskDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
   };
   
   return (
