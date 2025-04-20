@@ -51,9 +51,9 @@ const LandingPage = () => {
   ];
   
   const upcomingEvents = [
-    { id: 5, name: "Client presentation", time: "10:00", date: "Tomorrow", category: "professional" },
-    { id: 6, name: "Project deadline", time: "17:00", date: "In 4 days", category: "professional" },
-    { id: 7, name: "Team building event", time: "13:00", date: "Next week", category: "personal" },
+    { id: 5, name: "Client presentation", time: "10:00", date: "Apr 20", category: "professional" },
+    { id: 6, name: "Project deadline", time: "17:00", date: "Apr 24", category: "professional" },
+    { id: 7, name: "Team building event", time: "13:00", date: "Apr 27", category: "personal" },
   ];
   
   return (

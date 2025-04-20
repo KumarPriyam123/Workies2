@@ -5,6 +5,7 @@ import App from './App'
 import LandingPage from './LandingPage'
 import LoginPage from './LoginPage'
 import SignupPage from './SignupPage'
+import TeamProjects from './TeamProjects'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -15,6 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/dashboard" element={<App />} />
+        <Route path="/team-projects" element={<TeamProjects />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
