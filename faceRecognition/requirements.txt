@@ -1,0 +1,7 @@
+flask==2.2.3
+face-recognition==1.4.0
+numpy==1.24.2
+pymongo==4.3.3
+python-dotenv==1.0.0
+Werkzeug==2.2.3
+gunicorn==20.1.0 
