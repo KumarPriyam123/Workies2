@@ -1,1 +1,1 @@
-export const DB_NAME = 'memoryLanE';
+export const DB_NAME = 'workease2';

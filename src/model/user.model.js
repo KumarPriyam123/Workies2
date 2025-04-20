@@ -17,6 +17,15 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
     },
+    field: {
+    type: String,
+    enum: ['Finance', 'Tech', 'Teaching', 'Healthcare', 'Student', 'Others'],
+    default: 'Others'
+    },
+    education: {
+    type: String,
+    default: ''
+    },
     theme_settings: {
     type: String,
     default: 'dark'
@@ -25,6 +34,9 @@ const UserSchema = new mongoose.Schema({
     type: String,
     enum: ['kanban', 'table', 'calendar'],
     default: 'kanban'
+    },
+    refreshToken: {
+    type: String
     },
     created_at: {
     type: Date,
